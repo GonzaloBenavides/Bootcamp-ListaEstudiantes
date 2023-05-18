@@ -14,8 +14,29 @@
 <title>Students - ALL</title>
 </head>
 <body>
-	<h1 style="text-align: center;">Students</h1>
-	<a href="/">Home</a> <a href="/students/new">New Student</a> <a href="/contact/new">Add Contact Info</a>
+	<h1 style="text-align: center;">Students - API</h1>
+	<a href="/">Home</a> <a href="/students/new">New Student</a> <a href="/contact/new">Add Contact Info</a> <a href="/dorm/new">Add New Dorm</a>
+	<h2 style="text-align: center;">Dorms</h2>
+	<table class="table table-striped mt-5 border border-1">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Student Count</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach var="s" items="${dorms}">
+				<tr>
+					<td><c:out value=" ${s.name}" /></td>
+					<td><c:out value=" ${s.students.size() }"/> </td>
+					<td><a href="/dorm/${s.id}">Check dorm</a></td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
+
+	<h2 style="text-align: center;">Students</h2>
 	<table class="table table-striped mt-5 border border-1">
 		<thead>
 			<tr>

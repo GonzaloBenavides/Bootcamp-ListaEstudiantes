@@ -12,4 +12,7 @@ import cl.gonzalobenavides.listaestudiantes.model.Student;
 public interface StudentRepository extends CrudRepository<Student, Long> {
 	
 	List<Student> findAll();
+	List<Student> findByDormId(Long id);
+	
+	Student findStudentById(Long id);
 }
